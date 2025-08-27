@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Nunito', sans-serif;
       line-height: 1.6;
       color: #111;
       background: #fff;
@@ -39,20 +39,21 @@
     }
 
     /* TOP IMAGE */
-.hero-image img {
-  width: 100%;
-  height: 400px;            /* limit height */
-  object-fit: cover;        /* fill container without stretching */
-  object-position: center 25%;  /* move image up by 25% to show bottom part */
-  display: block;
-    
+    .hero-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center bottom;  /* show bottom part always */
+      display: block;
+    }
+
     /* HERO */
     .hero {
       padding: 48px 0 32px;
     }
-   .hero h1 {
-  margin: 0 0 12px;
-  font-size: clamp(48px, 8vw, 72px); 
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(64px, 10vw, 96px); /* much larger */
     }
     .hero p {
       margin: 0;
@@ -88,27 +89,29 @@
       transform: scale(1.05);
     }
 
-    /* VIDEOS - now stacked column */
-.videos {
-  display: flex;
-  flex-direction: column; /* stack vertically */
-  gap: 24px;
-}
-.videos iframe {
-  width: 100%;
-  height: 300px;
-}
+    /* VIDEOS - stacked and centered */
+    .videos {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center; /* center videos horizontally */
+    }
+    .videos iframe {
+      width: 80%;
+      max-width: 640px;
+      height: 360px;
+      border: none;
+    }
 
     /* CONTACT */
- #contact a {
-  color: #000;             /* black text */
-  text-decoration: none;   /* remove underline */
-  font-weight: 500;
-}
-
-#contact a:hover {
-  text-decoration: underline; /* underline only on hover */
-}
+    #contact a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    #contact a:hover {
+      text-decoration: underline;
+    }
 
     /* FOOTER */
     footer {
@@ -135,13 +138,13 @@
 
   <main>
     
-  <section class="hero-image">
-  <img src="SEP2run.jpg" alt="John Gillespie">
-</section>
+    <section class="hero-image">
+      <img src="SEP2run.jpg" alt="John Gillespie">
+    </section>
     
     <section id="about" class="hero container">
       <h1>John Gillespie</h1>
-      <p>Hi. I'm a passionate documentary and film producer with expertise in post-production, story producing, archival management, editing, scriptwriting and research.</p>
+      <p>Hi. I'm a passionate documentary and film producer with bags of experience in post-production, story producing, archival management, editing, scriptwriting and research.</p>
     </section>
 
     <section id="projects" class="container">
@@ -157,8 +160,8 @@
     <section id="videos" class="container">
       <h2>Videos</h2>
       <div class="videos">
-        <iframe src="https://www.bbc.co.uk/programmes/p052bb8b/player" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/watch?v=EVBU5oRWn2c" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/EVBU5oRWn2c" allowfullscreen></iframe>
         <!-- add more if needed -->
       </div>
     </section>
@@ -166,7 +169,7 @@
     <section id="contact" class="container">
       <h2>Contact</h2>
       <p><a href="mailto:john.gillespie.tv@gmail.com">john.gillespie.tv@gmail.com</a></p>
-      <p><a href="linkedin.com/in/john-gillespie-682222b7" target="_blank">linkedin.com/in/john-gillespie-682222b7</a></p>
+      <p><a href="https://www.linkedin.com/in/john-gillespie-682222b7" target="_blank">linkedin.com/in/john-gillespie-682222b7</a></p>
     </section>
   </main>
 
