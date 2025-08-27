@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Johnality — Filmmaker & Producer</title>
+  <style>
+    :root{--max-width:1100px;--accent:#2b6cb0}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111;margin:0;line-height:1.45;background:#fafafa}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+    header.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+    .site-header .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .site-title{font-weight:700}
+    nav a{margin-left:14px;color:inherit;text-decoration:none}
+    .hero{padding:48px 0 32px}
+    .hero h1{margin:0 0 8px;font-size:clamp(24px,4vw,36px)}
+    .hero p{margin:0;color:#333}
+    .btn{display:inline-block;padding:8px 14px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;margin-top:12px}
+    /* carousel */
+    .carousel-wrap{padding:28px 0}
+    .carousel{position:relative}
+    .thumb-row{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:6px}
+    .thumb{flex:0 0 220px;cursor:pointer;border:1px solid #ddd;border-radius:8px;background:#fff;padding:6px}
+    .thumb img{width:100%;height:130px;object-fit:cover;border-radius:6px;display:block}
+    .thumb .title{font-weight:600;margin-top:6px;font-size:14px}
+    .carousel-controls{display:flex;gap:8px;position:absolute;right:0;top:-8px}
+    .carousel-controls button{background:#fff;border:1px solid #ccc;padding:6px;border-radius:6px;cursor:pointer}
+    /* modal */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal.show{display:flex}
+    .modal-content{background:#fff;border-radius:8px;max-width:900px;max-height:90vh;overflow:auto;padding:18px}
+    .modal-content img{width:100%;height:auto;border-radius:6px}
+    .modal-close{display:inline-block;margin-top:12px;padding:8px 12px;border:0;background:var(--accent);color:#fff;border-radius:6px;cursor:pointer}
+    /* videos */
+    .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;padding:18px 0}
+    iframe{width:100%;height:200px;border:0;border-radius:6px}
+    /* footer */
+    footer{padding:20px 0;color:#666;border-top:1px solid #eee}
+    @media(min-width:850px){ iframe{height:320px} .thumb{flex:0 0 240px} }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container inner">
+    <div class="site-title">Johnality</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Work</a>
+      <a href="#videos">Videos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="hero container">
+    <h1>Hi — I'm Johnality</h1>
+    <p>Filmmaker & producer. I make documentaries, news features and short films. I focus on story, archives, and careful post-production.</p>
+    <a class="btn" href="#projects">See my work</a>
+  </section>
+
+  <section id="projects" class="carousel-wrap container">
+    <h2>Selected work</h2>
+    <div class="carousel">
+      <div class="carousel-controls">
+        <button id="prev" aria-label="Scroll left">◀</button>
+        <button id="next" aria-label="Scroll right">▶</button>
+      </div>
+      <div class="thumb-row" id="thumbRow">
+        <!-- Each .thumb is clickable; replace the placeholders with your thumbs and update data-* attributes -->
+        <div class="thumb" tabindex="0" data-title="Show A" data-desc="Producer — Short documentary" data-image="https://via.placeholder.com/1200x675?text=Show+A">
+          <img src="https://via.placeholder.com/400x250?text=Show+A" alt="Show A thumbnail">
+          <div class="title">Show A</div>
+        </div>
+
+        <div class="thumb" tabindex="0" data-title="Show B" data-desc="Archive research & editing" data-image="https://via.placeholder.com/1200x675?text=Show+B">
+          <img src="https://via.placeholder.com/400x250?text=Show+B" alt="Show B thumbnail">
+          <div class="title">Show B</div>
+        </div>
+
+        <div class="thumb" tabindex="0" data-title="Show C" data-desc="Co-producer" data-image="https://via.placeholder.com/1200x675?text=Show+C">
+          <img src="https://via.placeholder.com/400x250?text=Show+C" alt="Show C thumbnail">
+          <div class="title">Show C</div>
+        </div>
+
+        <div class="thumb" tabindex="0" data-title="Show D" data-desc="Story producer" data-image="https://via.placeholder.com/1200x675?text=Show+D">
+          <img src="https://via.placeholder.com/400x250?text=Show+D" alt="Show D thumbnail">
+          <div class="title">Show D</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:12px;color:#444">Click a thumbnail for more information.</p>
+  </section>
+
+  <section id="videos" class="container">
+    <h2>Embedded videos</h2>
+    <div class="videos">
+      <div>
+        <!-- Replace the YouTube IDs (dQw4w9WgXcQ / 3JZ_D3ELwOQ) with your video IDs -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video 1" allowfullscreen></iframe>
+        <p>Title — Short description. Replace the YouTube ID in the iframe src with your video.</p>
+      </div>
+      <div>
+        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Video 2" allowfullscreen></iframe>
+        <p>Title — Short description.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for project detail -->
+  <div id="projectModal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <h3 id="modalTitle"></h3>
+      <img id="modalImage" src="" alt="">
+      <p id="modalDesc"></p>
+      <button id="modalClose" class="modal-close">Close</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="container">
+  <p>Want to get in touch? <a href="contact.html">Contact me</a></p>
+  <p style="font-size:13px;margin-top:8px;color:#999">This is a simple GitHub Pages starter. Swap text/images/videos for your own.</p>
+</footer>
+
+<script>
+  // Carousel buttons
+  const thumbRow = document.getElementById('thumbRow');
+  document.getElementById('prev').addEventListener('click', () => {
+    thumbRow.scrollBy({left: -thumbRow.clientWidth, behavior: 'smooth'});
+  });
+  document.getElementById('next').addEventListener('click', () => {
+    thumbRow.scrollBy({left: thumbRow.clientWidth, behavior: 'smooth'});
+  });
+
+  // Modal
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImage = document.getElementById('modalImage');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(title, img, desc) {
+    modalTitle.textContent = title;
+    modalImage.src = img;
+    modalImage.alt = title;
+    modalDesc.textContent = desc;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+  }
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+  }
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      openModal(t.dataset.title, t.dataset.image, t.dataset.desc);
+    });
+    t.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); }});
+  });
+</script>
+
+</body>
+</html>
