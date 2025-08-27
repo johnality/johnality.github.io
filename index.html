@@ -101,16 +101,15 @@
     /* VIDEOS - stacked, 16:9 inline */
 .videos {
   display: flex;
-  flex-direction: column; /* stack vertically */
+  flex-direction: column;   /* stack vertically */
   gap: 24px;
-  align-items: center;    /* center videos horizontally */
+  align-items: stretch;     /* stretch videos to container width */
 }
 
 .video-wrapper {
   position: relative;
-  width: 80%;            /* controls width of videos */
-  max-width: 640px;      /* optional max width */
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  width: 100%;             /* match container width */
+  padding-bottom: 56.25%;  /* 16:9 aspect ratio */
   height: 0;
 }
 
