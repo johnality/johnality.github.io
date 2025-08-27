@@ -42,16 +42,16 @@
     /* TOP IMAGE */
     .hero-image img {
       width: 100%;
-      height: 55vh;            /* taller but controlled */
-      max-height: 520px;       /* stops it from getting huge */
+      height: 55vh;
+      max-height: 520px;
       object-fit: cover;
-      object-position: bottom; /* always show bottom part */
+      object-position: bottom;
       display: block;
     }
 
     /* HERO */
     .hero {
-      padding: 24px 0 32px; /* small gap below image */
+      padding: 24px 0 32px;
     }
     .hero h1 {
       margin: 0 0 12px;
@@ -91,51 +91,27 @@
       transform: scale(1.05);
     }
 
-    /* VIDEOS — always stacked, true 16:9 */
+    /* VIDEOS - stacked, 16:9 inline */
     .videos {
       display: flex;
-      flex-direction: column;   /* always vertical */
+      flex-direction: column;
       gap: 24px;
-      align-items: center;      /* center the stack */
+      align-items: center;
     }
     .video-wrapper {
       position: relative;
       width: 80%;
       max-width: 640px;
-      padding-bottom: 56.25%;   /* 16:9 ratio (9/16 = 0.5625) */
+      padding-bottom: 56.25%; /* 16:9 ratio */
       height: 0;
     }
-    /* YouTube (or other iframe) */
     .video-wrapper iframe {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
-    }
-    /* BBC “thumbnail -> open in new tab” card (no BBC text) */
-    .video-link {
-      position: absolute;
-      inset: 0;
-      display: block;
-    }
-    .video-link img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;        /* fills the 16:9 box neatly */
-      border: none;
-    }
-    .video-link .play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 64px;
-      line-height: 1;
-      color: rgba(255,255,255,0.95);
-      text-shadow: 0 4px 16px rgba(0,0,0,0.6);
-      pointer-events: none;     /* click passes through to link */
     }
 
     /* CONTACT */
@@ -172,6 +148,7 @@
   </header>
 
   <main>
+    
     <section class="hero-image">
       <img src="SEP2run.jpg" alt="John Gillespie">
     </section>
@@ -193,31 +170,19 @@
     <section id="videos" class="container">
       <h2>Videos</h2>
       <div class="videos">
-        <!-- BBC #1 — thumbnail links to BBC player (no text on your page) -->
         <div class="video-wrapper">
-          <a class="video-link" href="https://www.bbc.co.uk/programmes/p052bb8b/player" target="_blank" rel="noopener">
-            <img src="bbc1.jpg" alt="BBC Video 1">
-            <span class="play">▶</span>
-          </a>
+          <iframe src="https://www.bbc.co.uk/programmes/p052bb8b/player" allowfullscreen></iframe>
         </div>
-        <!-- BBC #2 — thumbnail links to BBC player -->
         <div class="video-wrapper">
-          <a class="video-link" href="https://www.bbc.co.uk/programmes/p03603v3/player" target="_blank" rel="noopener">
-            <img src="bbc2.jpg" alt="BBC Video 2">
-            <span class="play">▶</span>
-          </a>
+          <iframe src="https://www.bbc.co.uk/programmes/p03603v3/player" allowfullscreen></iframe>
         </div>
-        <!-- YouTube — true 16:9 iframe -->
         <div class="video-wrapper">
-          <iframe
-            src="https://www.instagram.com/p/DKK9WfsKUp_/"
-            title="Dreamless Sleep"
-            allowfullscreen
-          ></iframe>
+          <iframe src="https://www.instagram.com/reel/DKK9WfsKUp_/?utm_source=ig_embed&amp;utm_campaign=loading" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
+    
     <section id="contact" class="container">
       <h2>Contact</h2>
       <p><a href="mailto:john.gillespie.tv@gmail.com">john.gillespie.tv@gmail.com</a></p>
@@ -226,7 +191,7 @@
   </main>
 
   <footer class="container">
-    <p> </p>
+    <p></p>
   </footer>
 
 </body>
