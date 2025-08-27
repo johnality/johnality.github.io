@@ -113,6 +113,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  aspect-ratio: 16 / 9; /* force modern browsers to keep 16:9 */
   border: none;
 }
 
@@ -173,10 +174,10 @@
       <h2>Videos</h2>
       <div class="videos">
         <div class="video-wrapper">
-          <iframe src="https://www.bbc.co.uk/programmes/p052bb8b" allowfullscreen></iframe>
+          <iframe src="https://www.bbc.co.uk/programmes/p052bb8b/player" allowfullscreen></iframe>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.bbc.co.uk/programmes/articles/cfrxVG5J3K6g68ksjpmS50/soundtrack-is-music-to-the-ears-of-well-done-u-judges" allowfullscreen></iframe>
+          <iframe src="https://www.bbc.co.uk/programmes/p03603v3/player" allowfullscreen></iframe>
         </div>
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/EVBU5oRWn2c" allowfullscreen></iframe>
@@ -184,6 +185,8 @@
       </div>
     </section>
 
+
+    
     <section id="contact" class="container">
       <h2>Contact</h2>
       <p><a href="mailto:john.gillespie.tv@gmail.com">john.gillespie.tv@gmail.com</a></p>
