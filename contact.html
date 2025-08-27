@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Johnality</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;color:#111;background:#fafafa}
+    .container{max-width:900px;margin:40px auto;padding:0 20px}
+    header{padding:12px 0;border-bottom:1px solid #eee}
+    header a{margin-left:12px;text-decoration:none}
+    h1{margin-top:18px}
+    .card{background:#fff;padding:18px;border-radius:8px;border:1px solid #eee}
+    .copy{font-size:13px;color:#666;margin-top:12px}
+    .btn{display:inline-block;padding:8px 12px;background:#2b6cb0;color:#fff;border-radius:6px;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html">← Back to home</a>
+    </header>
+
+    <main>
+      <h1>Contact</h1>
+
+      <div class="card">
+        <p>If you'd like to reach me for projects, festivals, or collaboration — email me:</p>
+        <p><strong>Email:</strong> <a id="emailLink" href="mailto:your.email@example.com?subject=Website%20inquiry">your.email@example.com</a>
+        <button id="copyEmail" class="btn" style="margin-left:12px">Copy email</button></p>
+
+        <p class="copy">Replace <code>your.email@example.com</code> with your real email address. If you want a proper contact form (so messages submit to email), I can show how to connect Formspree or Netlify Forms.</p>
+
+        <p><strong>Social / links</strong></p>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Vimeo</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      const email = 'your.email@example.com';
+      try {
+        await navigator.clipboard.writeText(email);
+        alert('Email copied to clipboard: ' + email);
+      } catch(e) {
+        prompt('Copy this email:', email);
+      }
+    });
+  </script>
+</body>
+</html>
