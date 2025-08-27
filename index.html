@@ -22,12 +22,12 @@
 
     /* HEADER */
     .site-header {
-      border-bottom: 1px solid #eee; /* faint line under top buttons */
+      border-bottom: 1px solid #eee;
     }
     .site-header nav {
       display: flex;
       gap: 22px;
-      padding: 2px 0; /* very small gap above/below nav */
+      padding: 2px 0;
     }
     .site-header nav a {
       text-decoration: none;
@@ -59,7 +59,7 @@
 
     /* HERO */
     .hero {
-      padding: 4px 0 8px; /* small gap under image */
+      padding: 4px 0 8px;
     }
     .hero h1 {
       margin: 0 0 8px;
@@ -83,33 +83,53 @@
     }
 
     /* PROJECTS / CAROUSEL */
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 16px;
+    }
+
     .carousel {
       display: flex;
       gap: 16px;
-      overflow-x: auto;
-      padding: 10px 0;
-    }
-    .carousel img {
-      flex: 0 0 220px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .carousel img:hover {
-      transform: scale(1.05);
+      animation: scroll 60s linear infinite;
     }
 
-    /* VIDEOS - stacked, 16:9 inline */
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 150px;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 225px; /* 600x900 ratio */
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .carousel-item p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* VIDEOS */
     .videos {
       display: flex;
-      flex-direction: column;   
+      flex-direction: column;
       gap: 24px;
       align-items: stretch;
     }
     .video-wrapper {
       position: relative;
-      width: 100%;             
-      padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+      width: 100%;
+      padding-bottom: 56.25%;
       height: 0;
     }
     .video-wrapper iframe {
@@ -146,167 +166,89 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container inner">
-      <nav>
-        <a href="#projects">Work</a>
-        <a href="#videos">Videos</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero-image">
-      <img src="SEP2run.jpg" alt="John Gillespie">
-    </section>
-    
-    <section id="about" class="hero container">
-      <h1>John Gillespie</h1>
-      <p>Hi. I'm a documentary and film producer with bags of experience in story producing, archival management, editing, scriptwriting and research.</p>
-    </section>
-
-<section id="projects" class="container">
-  <h2>Selected Work</h2>
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="01 circus.jpg" alt="01 circus">
-        <p>Circus</p>
-      </div>
-      <div class="carousel-item">
-        <img src="02 power trip.jpg" alt="02 power trip">
-        <p>Power Trip</p>
-      </div>
-      <div class="carousel-item">
-        <img src="03 united gangs.jpg" alt="03 united gangs">
-        <p>United Gangs</p>
-      </div>
-      <div class="carousel-item">
-        <img src="04 Lady of the Dunes.jpg" alt="04 Lady of the Dunes">
-        <p>Lady of the Dunes</p>
-      </div>
-      <div class="carousel-item">
-        <img src="05 frontline vp chjoice.jpg" alt="05 frontline vp chjoice">
-        <p>Frontline VP Choice</p>
-      </div>
-      <div class="carousel-item">
-        <img src="06 Battlefield.jpg" alt="06 Battlefield">
-        <p>Battlefield</p>
-      </div>
-      <div class="carousel-item">
-        <img src="10 mehdi hasan.jpg" alt="10 mehdi hasan">
-        <p>Mehdi Hasan</p>
-      </div>
-      <div class="carousel-item">
-        <img src="11 Katie Phang.jpg" alt="11 Katie Phang">
-        <p>Katie Phang</p>
-      </div>
-      <div class="carousel-item">
-        <img src="12 symone.jpg" alt="12 symone">
-        <p>Symone</p>
-      </div>
-      <div class="carousel-item">
-        <img src="20 Engineering.jpg" alt="20 Engineering">
-        <p>Engineering</p>
-      </div>
-      <div class="carousel-item">
-        <img src="21 FYI.jpg" alt="21 FYI">
-        <p>FYI</p>
-      </div>
-      <div class="carousel-item">
-        <img src="31 BBC Planets.jpg" alt="31 BBC Planets">
-        <p>BBC Planets</p>
-      </div>
-      <div class="carousel-item">
-        <img src="32 BBC artsnight.jpg" alt="32 BBC artsnight">
-        <p>BBC Artsnight</p>
-      </div>
-      <!-- Repeat items for smooth infinite scroll -->
-      <div class="carousel-item">
-        <img src="01 circus.jpg" alt="01 circus">
-        <p>Circus</p>
-      </div>
-      <div class="carousel-item">
-        <img src="02 power trip.jpg" alt="02 power trip">
-        <p>Power Trip</p>
-      </div>
-      <!-- ...you can repeat more if needed -->
-    </div>
+<header class="site-header">
+  <div class="container inner">
+    <nav>
+      <a href="#projects">Work</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-</section>
+</header>
 
-<style>
-.carousel-wrapper {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 16px;
-}
+<main>
+  <section class="hero-image">
+    <img src="SEP2run.jpg" alt="John Gillespie">
+  </section>
 
-.carousel {
-  display: flex;
-  gap: 16px;
-  animation: scroll 60s linear infinite;
-}
+  <section id="about" class="hero container">
+    <h1>John Gillespie</h1>
+    <p>Hi. I'm a documentary and film producer with bags of experience in story producing, archival management, editing, scriptwriting and research.</p>
+  </section>
 
-.carousel-item {
-  flex: 0 0 auto;
-  width: 150px; /* adjust thumbnail width */
-  text-align: center;
-}
+  <section id="projects" class="container">
+    <h2>Selected Work</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="carousel-item"><img src="carousel/01-circus.jpg" alt="Circus"><p>Circus</p></div>
+        <div class="carousel-item"><img src="carousel/02-power-trip.jpg" alt="Power Trip"><p>Power Trip</p></div>
+        <div class="carousel-item"><img src="carousel/03-united-gangs.jpg" alt="United Gangs"><p>United Gangs</p></div>
+        <div class="carousel-item"><img src="carousel/04-lady-of-the-dunes.jpg" alt="Lady of the Dunes"><p>Lady of the Dunes</p></div>
+        <div class="carousel-item"><img src="carousel/05-frontline-vp-chjoice.jpg" alt="Frontline VP Choice"><p>Frontline VP Choice</p></div>
+        <div class="carousel-item"><img src="carousel/06-battlefield.jpg" alt="Battlefield"><p>Battlefield</p></div>
+        <div class="carousel-item"><img src="carousel/10-mehdi-hasan.jpg" alt="Mehdi Hasan"><p>Mehdi Hasan</p></div>
+        <div class="carousel-item"><img src="carousel/11-katie-phang.jpg" alt="Katie Phang"><p>Katie Phang</p></div>
+        <div class="carousel-item"><img src="carousel/12-symone.jpg" alt="Symone"><p>Symone</p></div>
+        <div class="carousel-item"><img src="carousel/20-engineering.jpg" alt="Engineering"><p>Engineering</p></div>
+        <div class="carousel-item"><img src="carousel/21-fyi.jpg" alt="FYI"><p>FYI</p></div>
+        <div class="carousel-item"><img src="carousel/31-bbc-planets.jpg" alt="BBC Planets"><p>BBC Planets</p></div>
+        <div class="carousel-item"><img src="carousel/32-bbc-artsnight.jpg" alt="BBC Artsnight"><p>BBC Artsnight</p></div>
 
-.carousel-item img {
-  width: 100%;
-  height: 225px; /* 600x900 ratio */
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.carousel-item p {
-  margin: 6px 0 0;
-  font-size: 14px;
-  color: #333;
-}
-
-/* Scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-</style>
-
-    <section id="videos" class="container">
-      <h2>Videos</h2>
-      <div class="videos">
-        <div class="video-wrapper">
-          <iframe src="https://www.bbc.co.uk/programmes/p052bb8b/player" allowfullscreen></iframe>
-        </div>
-        <div class="video-wrapper">
-          <iframe src="https://www.bbc.co.uk/programmes/p03603v3/player" allowfullscreen></iframe>
-        </div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/EVBU5oRWn2c" allowfullscreen></iframe>
-        </div>
+        <!-- duplicate items for infinite scroll -->
+        <div class="carousel-item"><img src="carousel/01-circus.jpg" alt="Circus"><p>Circus</p></div>
+        <div class="carousel-item"><img src="carousel/02-power-trip.jpg" alt="Power Trip"><p>Power Trip</p></div>
+        <div class="carousel-item"><img src="carousel/03-united-gangs.jpg" alt="United Gangs"><p>United Gangs</p></div>
+        <div class="carousel-item"><img src="carousel/04-lady-of-the-dunes.jpg" alt="Lady of the Dunes"><p>Lady of the Dunes</p></div>
+        <div class="carousel-item"><img src="carousel/05-frontline-vp-chjoice.jpg" alt="Frontline VP Choice"><p>Frontline VP Choice</p></div>
+        <div class="carousel-item"><img src="carousel/06-battlefield.jpg" alt="Battlefield"><p>Battlefield</p></div>
+        <div class="carousel-item"><img src="carousel/10-mehdi-hasan.jpg" alt="Mehdi Hasan"><p>Mehdi Hasan</p></div>
+        <div class="carousel-item"><img src="carousel/11-katie-phang.jpg" alt="Katie Phang"><p>Katie Phang</p></div>
+        <div class="carousel-item"><img src="carousel/12-symone.jpg" alt="Symone"><p>Symone</p></div>
+        <div class="carousel-item"><img src="carousel/20-engineering.jpg" alt="Engineering"><p>Engineering</p></div>
+        <div class="carousel-item"><img src="carousel/21-fyi.jpg" alt="FYI"><p>FYI</p></div>
+        <div class="carousel-item"><img src="carousel/31-bbc-planets.jpg" alt="BBC Planets"><p>BBC Planets</p></div>
+        <div class="carousel-item"><img src="carousel/32-bbc-artsnight.jpg" alt="BBC Artsnight"><p>BBC Artsnight</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Instagram embed script (once per page) -->
-    <script async src="https://www.instagram.com/embed.js"></script>
-    
-    <section id="contact" class="container">
-      <h2>Contact</h2>
-      <p><a href="mailto:john.gillespie.tv@gmail.com">john.gillespie.tv@gmail.com</a></p>
-      <p><a href="https://www.linkedin.com/in/john-gillespie-682222b7" target="_blank">linkedin.com/in/john-gillespie-682222b7</a></p>
-    </section>
-  </main>
+  <section id="videos" class="container">
+    <h2>Videos</h2>
+    <div class="videos">
+      <div class="video-wrapper">
+        <iframe src="https://www.bbc.co.uk/programmes/p052bb8b/player" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://www.bbc.co.uk/programmes/p03603v3/player" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/EVBU5oRWn2c" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-  <footer class="container">
-    <p></p>
-  </footer>
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p><a href="mailto:john.gillespie.tv@gmail.com">john.gillespie.tv@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/john-gillespie-682222b7" target="_blank">linkedin.com/in/john-gillespie-682222b7</a></p>
+  </section>
+</main>
+
+<footer class="container">
+  <p></p>
+</footer>
 
 </body>
 </html>
