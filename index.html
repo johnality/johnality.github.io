@@ -40,17 +40,19 @@
 
     /* TOP IMAGE */
 .hero-image img {
-  width: 100%;        /* full width */
-  height: auto;       /* keeps aspect ratio */
-  display: block;     /* removes gaps below image */
+  width: 100%;
+  height: 400px;            /* limit height */
+  object-fit: cover;        /* fill container without stretching */
+  object-position: center 25%;  /* move image up by 25% to show bottom part */
+  display: block;
     
     /* HERO */
     .hero {
       padding: 48px 0 32px;
     }
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: clamp(32px, 5vw, 48px);
+   .hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(48px, 8vw, 72px); 
     }
     .hero p {
       margin: 0;
@@ -87,26 +89,26 @@
     }
 
     /* VIDEOS - now stacked column */
-    .videos {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .videos iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
+.videos {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 24px;
+}
+.videos iframe {
+  width: 100%;
+  height: 300px;
+}
 
     /* CONTACT */
-    #contact a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    #contact a:hover {
-      text-decoration: underline;
-    }
+ #contact a {
+  color: #000;             /* black text */
+  text-decoration: none;   /* remove underline */
+  font-weight: 500;
+}
+
+#contact a:hover {
+  text-decoration: underline; /* underline only on hover */
+}
 
     /* FOOTER */
     footer {
