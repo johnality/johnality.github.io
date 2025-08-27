@@ -92,27 +92,29 @@
     }
 
     /* VIDEOS - stacked, 16:9 inline */
-    .videos {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-    }
-    .video-wrapper {
-      position: relative;
-      width: 80%;
-      max-width: 640px;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      height: 0;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+.videos {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 24px;
+  align-items: center;    /* center videos horizontally */
+}
+
+.video-wrapper {
+  position: relative;
+  width: 80%;            /* controls width of videos */
+  max-width: 640px;      /* optional max width */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
     /* CONTACT */
     #contact a {
