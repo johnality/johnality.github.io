@@ -21,23 +21,23 @@
     }
 
     /* HEADER */
+    .site-header {
+      border-bottom: 1px solid #eee; /* faint line under top buttons */
+    }
     .site-header nav {
       display: flex;
       gap: 22px;
-      padding: 4px 0; /* smaller gap above/below nav */
+      padding: 2px 0; /* very small gap above/below nav */
     }
     .site-header nav a {
       text-decoration: none;
       color: #000;
       font-weight: 600;
-      font-size: 22px; /* bigger nav buttons */
+      font-size: 22px;
     }
     .site-header nav a:hover {
       text-decoration: underline;
     }
-    .site-header nav a:hover {
-  text-decoration: underline;
-}
 
     /* TOP IMAGE */
     .hero-image img {
@@ -59,7 +59,7 @@
 
     /* HERO */
     .hero {
-      padding: 4px 0 8px; /* very small gap under image */
+      padding: 4px 0 8px; /* small gap under image */
     }
     .hero h1 {
       margin: 0 0 8px;
@@ -68,7 +68,7 @@
     .hero p {
       margin: 0;
       color: #333;
-      width: 100%;        /* span container */
+      width: 100%;
     }
 
     /* SECTIONS */
@@ -76,7 +76,7 @@
       padding: 32px 0;
     }
     section h2 {
-      font-size: 35px; /* slightly smaller than before */
+      font-size: 35px;
       margin-bottom: 16px;
       border-bottom: 1px solid #eee;
       padding-bottom: 6px;
@@ -104,16 +104,14 @@
       display: flex;
       flex-direction: column;   
       gap: 24px;
-      align-items: stretch;     
+      align-items: stretch;
     }
-
     .video-wrapper {
       position: relative;
       width: 100%;             
       padding-bottom: 56.25%;  /* 16:9 aspect ratio */
       height: 0;
     }
-
     .video-wrapper iframe {
       position: absolute;
       top: 0;
@@ -133,7 +131,7 @@
       text-decoration: underline;
     }
     #contact h2 {
-      font-size: 35px; /* match other section headings */
+      font-size: 35px;
     }
 
     /* FOOTER */
@@ -159,7 +157,6 @@
   </header>
 
   <main>
-    
     <section class="hero-image">
       <img src="SEP2run.jpg" alt="John Gillespie">
     </section>
