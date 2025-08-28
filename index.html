@@ -28,6 +28,7 @@
       display: flex;
       gap: 22px;
       padding: 2px 0;
+      margin: 0;
     }
     .site-header nav a {
       text-decoration: none;
@@ -40,6 +41,10 @@
     }
 
     /* TOP IMAGE */
+    .hero-image {
+      margin: 0;
+      padding: 0;
+    }
     .hero-image img {
       width: 100%;
       height: 55vh;
@@ -47,6 +52,7 @@
       object-fit: cover;
       object-position: bottom;
       display: block;
+      margin: 0;
 
       /* subtle top and bottom fade */
       -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.97), rgba(0,0,0,1), rgba(0,0,0,0.97));
@@ -59,10 +65,10 @@
 
     /* HERO */
     .hero {
-      padding: 4px 0 8px;
+      padding: 8px 0 8px; /* reduced top gap */
     }
     .hero h1 {
-      margin: 0 0 8px;
+      margin: 8px 0 8px; /* tighter gap from image */
       font-size: clamp(48px, 8vw, 72px);
     }
     .hero p {
@@ -133,6 +139,7 @@
       flex-direction: column;
       gap: 24px;
       align-items: stretch;
+      padding-bottom: 16px; /* reduced bottom padding before Contact */
     }
     .video-wrapper {
       position: relative;
@@ -252,35 +259,39 @@ const leftBtn = document.querySelector('.carousel-btn.left');
 const rightBtn = document.querySelector('.carousel-btn.right');
 
 function scrollAmount() {
-  return carousel.querySelector('.carousel-item').offsetWidth + 16; // one item width + gap
+  return carousel.querySelector('.carousel-item').offsetWidth + 16;
 }
 
+// Button controls
 leftBtn.addEventListener('click', () => {
   carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+  pauseAutoScroll();
 });
 rightBtn.addEventListener('click', () => {
   carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+  pauseAutoScroll();
 });
 
-// autoplay with responsive speed
-let autoScroll;
-function startAutoScroll() {
-  let interval = window.innerWidth < 600 ? 2500 : 4000; // faster on mobile
-  autoScroll = setInterval(() => {
-    carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 2) {
-      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+// Continuous auto-scroll
+let isPaused = false;
+let speed = window.innerWidth < 600 ? 0.5 : 0.3; // faster on mobile
+function autoScroll() {
+  if (!isPaused) {
+    carousel.scrollLeft += speed;
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
+      carousel.scrollLeft = 0;
     }
-  }, interval);
+  }
+  requestAnimationFrame(autoScroll);
 }
-function stopAutoScroll() {
-  clearInterval(autoScroll);
-}
-carousel.addEventListener('mouseenter', stopAutoScroll);
-carousel.addEventListener('mouseleave', startAutoScroll);
-startAutoScroll();
+autoScroll();
 
-// swipe support
+function pauseAutoScroll() {
+  isPaused = true;
+  setTimeout(() => isPaused = false, 4000); // resume after 4s
+}
+
+// Swipe support
 let startX;
 carousel.addEventListener('touchstart', e => startX = e.touches[0].clientX);
 carousel.addEventListener('touchend', e => {
