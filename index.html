@@ -41,28 +41,33 @@
     }
 
     /* TOP IMAGE */
-    .hero-image {
-      margin: 0;
-      padding: 0;
-    }
-    .hero-image img {
-      width: 100%;
-      height: 55vh;
-      max-height: 520px;
-      object-fit: cover;
-      object-position: bottom;
-      display: block;
-      margin: 0;
+.hero-image {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-      /* subtle top and bottom fade */
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.97), rgba(0,0,0,1), rgba(0,0,0,0.97));
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.97), rgba(0,0,0,1), rgba(0,0,0,0.97));
-      mask-repeat: no-repeat;
-      mask-size: 100% 100%;
-    }
+.hero-image img {
+  width: 100%;
+  height: 55vh;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+  margin: 0;
+}
 
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* adjust fade height */
+  background: linear-gradient(to bottom, white 0%, transparent 100%);
+  pointer-events: none;
+}
     /* HERO */
     .hero {
       padding: 8px 0 8px; /* reduced top gap */
@@ -139,7 +144,7 @@
       flex-direction: column;
       gap: 24px;
       align-items: stretch;
-      padding-bottom: 16px; /* reduced bottom padding before Contact */
+      padding-bottom: 10px; /* reduced bottom padding before Contact */
     }
     .video-wrapper {
       position: relative;
@@ -198,7 +203,7 @@
 
   <section id="about" class="hero container">
     <h1>John Gillespie</h1>
-    <p>Hi. I'm a documentary and film producer with bags of experience in story producing, archival management, editing, scriptwriting and research.</p>
+    <p>Hi. I'm a documentary and film producer with bags of experience when it comes to story producing, archival management, editing, scriptwriting and research.</p>
   </section>
 
 <!-- PROJECTS / CAROUSEL --> 
